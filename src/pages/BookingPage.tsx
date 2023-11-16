@@ -1,11 +1,27 @@
-import {ProfileComponent} from "../components/ProfileComponent/ProfileComponent";
-import {BookingComponent} from "../components/BookingComponent/BookingComponent";
+import React, {useEffect, useState} from "react";
+import {TagPanel} from "../widgets/TagPanel";
 
-export function BookingPage  ()  {
-  return(
-      <div>
-          BookingPage
-          <BookingComponent />
-      </div>
-  );
+
+const BookingPage=()=>{
+
+    const [tagList, setTagList] = useState<number>(0);
+    setTagList(0);
+    console.log(tagList);
+    // useEffect(() => {
+    //     let a:number = 1;
+    //     a++;
+    //     console.log(a);
+    // }, []);
+
+    const deleteTagFromList = (element: number) => {
+
+    }
+
+
+    return (
+        <div>
+        </div>
+    );
 }
+
+export default BookingPage;
