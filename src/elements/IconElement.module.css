@@ -1,0 +1,13 @@
+.addIcon{
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    fill: white;
+
+}
+
+.closeIcon{
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+}

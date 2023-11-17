@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {TagPanel} from "../blocks/TagPanel";
+import {ButtonElement, ColorButton} from "../elements/ButtonElement";
 
 
 const BookingPage=()=>{
@@ -17,7 +18,7 @@ const BookingPage=()=>{
         <div>
             asda
             <TagPanel tags={tagList} returnTagFunc={deleteTagFromList}/>
-
+            <ButtonElement title='Забронировать' color={ColorButton.BookingButton}/>
         </div>
     );
 }
