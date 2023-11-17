@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path='/bookings' render={BookingPage}
+          <Route path='/bookings' render={() => (<BookingPage/>)}
           />
 
           <Route path='/admin' render={AdminPage}

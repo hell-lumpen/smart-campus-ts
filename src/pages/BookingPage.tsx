@@ -1,25 +1,23 @@
 import React, {useEffect, useState} from "react";
-import {TagPanel} from "../widgets/TagPanel";
+import {TagPanel} from "../blocks/TagPanel";
 
 
 const BookingPage=()=>{
 
-    const [tagList, setTagList] = useState<number>(0);
-    setTagList(0);
+    const [tagList, setTags] = useState(['Лекция', 'Практика', 'Экзамен']);
     console.log(tagList);
-    // useEffect(() => {
-    //     let a:number = 1;
-    //     a++;
-    //     console.log(a);
-    // }, []);
-
-    const deleteTagFromList = (element: number) => {
-
+    const deleteTagFromList = (element: string):void => {
+        let a:string[] =  [...tagList];
+        a.splice(a.indexOf(element), 1);
+        setTags(a);
     }
 
 
     return (
         <div>
+            asda
+            <TagPanel tags={tagList} returnTagFunc={deleteTagFromList}/>
+
         </div>
     );
 }

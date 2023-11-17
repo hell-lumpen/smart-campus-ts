@@ -2,6 +2,8 @@ import React, {MouseEventHandler, ReactElement} from "react";
 import style from './TagElement.module.css'
 import styled from "styled-components";
 import {ReactComponent as CloseSvg} from '../svg_icon/close.svg'
+import {Simulate} from "react-dom/test-utils";
+import click = Simulate.click;
 
 const TagSpan = styled.div`
   font-weight: 200;
@@ -26,14 +28,21 @@ const processingEventMouse = (event: React.MouseEvent<HTMLDivElement>) =>{
 }
 
 
-export const TagElement = (data : {title: string, color: string, callback?: () => {}}): ReactElement => {
+export const TagElement = (data : {title: string, color: string, callback?: (tag:string)=>void}): ReactElement => {
     let result: ReactElement;
-    if (data.callback !== undefined) {
+
+
+
+    if (data.callback) {
         result =
             <div
                  onMouseDown={processingEventMouse}
                  onMouseUp={processingEventMouse}
-                 onClick={processingEventMouse}
+                 onClick={()=>{
+                     if (data.callback)
+                         data.callback(data.title);
+                 }}
+                 id={data.title}
             >
                 <TagSpan className={style.tag} style={{background: data.color}}>
                     <span className={style.tagTitle}>{data.title}</span>
