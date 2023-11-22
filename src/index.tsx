@@ -9,14 +9,35 @@ import {AdminPage} from "./pages/AdminPage";
 import {InventoryPage} from "./pages/InventoryPage";
 import {SchedulePage} from "./pages/SchedulePage";
 import {TagElement} from "./elements/TagElement";
-import App from "./App";
+import {NavigationPanel} from "./blocks/NavigationPanel/NavigationPanel";
+// import App from "./App";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <App/>
+        <NavigationPanel/>
+        <BrowserRouter>
+            <Switch>
+                <Route path='/bookings' render={() => (<BookingPage/>)}
+                />
+
+                <Route path='/admin' render={() => (<AdminPage/>)}
+                />
+
+                <Route path='/inventory' render={() => (<InventoryPage/>)}
+                />
+
+                <Route path='/schedule' render={() => (<SchedulePage/>)}
+                />
+
+                <Route path='*' render={() => {
+                    return <Redirect to='/bookings'/>
+                }}
+                />
+            </Switch>
+        </BrowserRouter>
     </React.StrictMode>
 );
 

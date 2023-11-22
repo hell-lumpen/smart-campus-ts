@@ -1,27 +1,34 @@
 import React, {MouseEventHandler, ReactElement} from "react";
-import style from './TagElement.module.css'
+import styleTag from './TagElement.module.css'
 import styled from "styled-components";
 import {Simulate} from "react-dom/test-utils";
 import click = Simulate.click;
 import {IconElement} from "./IconElement";
 
-const TagSpan = styled.div`
-  font-weight: 200;
+const TagSpan = styled.div<{isFull:boolean}>`
+  font-weight: 400;
   background: #66ffff;
-  width: max-content;
+  //width: max-content;
+  width: ${({isFull}) => (isFull?'inherit':'max-content')};
+  padding: ${({isFull}) => (isFull?'0 10px':'0')};
+  margin-left: ${({isFull}) => (isFull?'-10px':'0')};
+  //text-align: left;
+  
   height: max-content;
   line-height: 20px;
-  font-size: 16px;
-  padding: 2px 8px;
-  border: 1px solid #59DEDE;
-  border-radius: 15px;
+  font-size: 14px;
+  
+  //padding: 2px 8px;
+  
+  border:  ${({isFull}) => (isFull?'none':'1px solid #59DEDE')};
+  border-radius:  ${({isFull}) => (isFull?'none':'15px')};
+  
+  
   display: flex;
   flex-direction: row;
-  //width: 500px;
-
-  align-items: center;
-  justify-content: center;
   
+  align-items: center;
+  justify-content: left;
 `;
 
 type col = '#66ffff' | 'red';
@@ -30,32 +37,39 @@ const processingEventMouse = (event: React.MouseEvent<HTMLDivElement>) =>{
     // console.log(event.type);
 }
 
+type TagElementData = {
+    title:string,
+    color:string;
+    isFullWidth?:boolean,
+    callback?: (tag:string)=>void
+}
 
-export const TagElement = (data : {title: string, color: string, callback?: (tag:string)=>void}): ReactElement => {
+
+export const TagElement:React.FC<TagElementData> = ({title, color,  isFullWidth = false, callback}): ReactElement => {
     let result: ReactElement;
 
 
 
-    if (data.callback) {
+    if (callback) {
         result =
             <div
                  onMouseDown={processingEventMouse}
                  onMouseUp={processingEventMouse}
                  onClick={()=>{
-                     if (data.callback)
-                         data.callback(data.title);
+                     if (callback)
+                         callback(title);
                  }}
-                 id={data.title}
+                 id={title}
             >
-                <TagSpan className={style.tag} style={{background: data.color}}>
-                    <span className={style.tagTitle}>{data.title}</span>
+                <TagSpan isFull={isFullWidth} className={styleTag.tag} style={{background: color}}>
+                    <span className={styleTag.tagTitle}>{title}</span>
                     <IconElement type={'CloseIcon'}/>
                 </TagSpan>
             </div>;
     } else {
         result =
-            <TagSpan style={{background: data.color}}>
-                {data.title}
+            <TagSpan isFull={isFullWidth} style={{background: color}} >
+                <span className={styleTag.tagTitle}>{title}</span>
             </TagSpan>;
     }
 

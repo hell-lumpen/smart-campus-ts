@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, {AxiosRequestConfig, AxiosResponse } from "axios";
 
 class ApiService {
     private static baseURL = 'http://localhost:8080';

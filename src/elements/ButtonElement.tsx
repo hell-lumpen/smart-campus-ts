@@ -11,13 +11,21 @@ interface ButtonElementData {
 };
 
 export enum ColorButton {
-    'BookingButton' = '#32BF4D'
+    'BookingButton' = '#32BF4D',
+    'SimpleButton' = 'white'
+}
+
+
+export enum ColorButtonText {
+    'BookingButton' = '#32BF4D',
+    'SimpleButton' = 'white'
 }
 
 const Button = styled.button`
-  font-weight: 200;
+  font-weight: 500;
+  font-size: 16px;
 
-  color: white;
+  color: black;
   //border: 1px solid aqua;
   border: none;
   
