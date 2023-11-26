@@ -45,7 +45,7 @@ const getBookingTimeZone = (time_start: Date, time_end: Date) => {
     let div_time_zone_start = document.getElementById('time_zone_' + times.indexOf(h1 + ':00'));
     let div_time_zone_end = document.getElementById('time_zone_' + times.indexOf(h2 + ':00'));
     if (div_time_zone_end === null || div_time_zone_start === null) {
-        return null;
+        return {start: 0, end: 0};
     }
 
     coord_start = div_time_zone_start.offsetTop;
@@ -60,59 +60,26 @@ const getBookingTimeZone = (time_start: Date, time_end: Date) => {
     return {start: coord_start, end: coord_end};
 }
 
-export const TimelineElement = () => {
+export const TimelineElement:React.FC<{dates:{ start_time: Date, end_time: Date }[]}> = ({dates}) => {
     const [timeCoords, setCoord] = useState<{ start: number, end: number }[]>([]);
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
+        let d:{ start: number, end: number }[] = [];
+        dates.map((element) => {
+            let coords = getBookingTimeZone(element.start_time, element.end_time);
+            d.push(coords);
+        });
 
-
-        let date1 = new Date(2014, 11, 31, 9, 0, 0);
-        let date2 = new Date(2014, 11, 31, 10, 30, 0);
-        const coords = getBookingTimeZone(date1, date2);
-        if (coords === null)
-            return;
-
-        let ind = timeCoords.findIndex((element) => element.start === coords.start && element.end === coords.end)
-        if (ind === -1)
-            setCoord((prevState) => [...prevState, coords]);
-
-
-        date1 = new Date(2014, 11, 31, 12, 15, 0);
-        date2 = new Date(2014, 11, 31, 13, 30, 0);
-        const coords1 = getBookingTimeZone(date1, date2);
-        if (coords1 === null)
-            return;
-
-        ind = timeCoords.findIndex((element) => element.start === coords1.start && element.end === coords1.end)
-        if (ind === -1)
-            setCoord((prevState) => [...prevState, coords1]);
-
-
-        date1 = new Date(2014, 11, 31, 16, 30, 0);
-        date2 = new Date(2014, 11, 31, 18, 0, 0);
-        const coords2 = getBookingTimeZone(date1, date2);
-        if (coords2 === null)
-            return;
-
-        ind = timeCoords.findIndex((element) => element.start === coords2.start && element.end === coords2.end)
-        if (ind === -1)
-            setCoord((prevState) => [...prevState, coords2]);
-
-        // setStartCoord(coords[0]);
-        // setEndCoord(coords[1]);
-
+        setCoord([...d]);
 
         const updateCurrentTime = () => {
             setCurrentTime(new Date());
             findCoordsForCurrentTime();
-
         };
-
         // Устанавливаем интервал для вызова функции каждую секунду
         const intervalId = setInterval(updateCurrentTime, 1000);
         findCoordsForCurrentTime();
-
         // Очищаем интервал при размонтировании компонента
         return () => clearInterval(intervalId);
     }, []);
