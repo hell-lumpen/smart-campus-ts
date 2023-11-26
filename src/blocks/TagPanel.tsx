@@ -1,4 +1,4 @@
-import {TagElement} from "../elements/TagElement";
+import {TagElement} from "../elements/TagElement/TagElement";
 import React, {ReactElement} from "react";
 
 

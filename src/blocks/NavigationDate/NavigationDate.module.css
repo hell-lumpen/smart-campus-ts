@@ -1,0 +1,9 @@
+.navigationCont{
+    /*background: red;*/
+
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

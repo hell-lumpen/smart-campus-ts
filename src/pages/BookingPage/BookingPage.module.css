@@ -1,0 +1,28 @@
+
+
+.bookingContainer{
+    background: #f6f6f6;
+    /*background: #F9F9F9;*/
+    /*background: #FCFCFC;*/
+
+    width: 60%;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left:  2px solid #EDEDED;
+    border-right: 2px solid #EDEDED;
+    padding-top: 100px;
+
+}
+
+.booking_card_container{
+    /*background: red;*/
+
+    width: 60%;
+    /*height: 150px;*/
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import {TagElement} from "../../elements/TagElement";
+import {TagElement} from "../../elements/TagElement/TagElement";
 import style from "./BookingComponent.module.css"
 import {ProfileSpan} from "../../elements/ProfileSpan";
 
@@ -23,8 +23,6 @@ export const BookingComponent: React.FC<BookingComponentData> = (
     return (
         <div className={style.bookingContainer}>
             {tagComponent}
-            {/*<Description/>*/}
-            {/*<TimeSpan/>*/}
             <div className={style.descriptionTimeContainer}>
                 <div className={style.descriptionBlock}>
                     {data.description}
