@@ -10,13 +10,15 @@ import {InventoryPage} from "./pages/InventoryPage";
 import {SchedulePage} from "./pages/SchedulePage";
 import {TagElement} from "./elements/TagElement";
 import {NavigationPanel} from "./blocks/NavigationPanel/NavigationPanel";
+import {Provider} from "react-redux";
+import {store} from "./store";
 // import App from "./App";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <NavigationPanel/>
         <BrowserRouter>
             <Switch>
@@ -38,7 +40,7 @@ root.render(
                 />
             </Switch>
         </BrowserRouter>
-    </React.StrictMode>
+    </Provider>
 );
 
 // If you want your app to work offline and load faster, you can change
