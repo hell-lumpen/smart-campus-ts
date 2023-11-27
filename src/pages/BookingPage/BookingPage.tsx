@@ -26,8 +26,8 @@ const BookingPage = () => {
 
             {/*<TagPanel tags={tagList} returnTagFunc={deleteTagFromList}/>*/}
             <div className={booking_style.booking_card_container}>
-                <NavigationDate/>
-                <BookingAddButton/>
+                {/*<NavigationDate/>*/}
+                {/*<BookingAddButton/>*/}
                 <HorizontalTimelineElement/>
                 <RoomWidget/>
 

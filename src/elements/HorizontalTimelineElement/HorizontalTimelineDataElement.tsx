@@ -1,23 +1,30 @@
 import style from './HorizontalTimelineDataElement.module.css'
 import React from "react";
+import {bookingData} from "./HorizontalTimelineElement";
 
 
-export const HorizontalTimelineDataElement: React.FC<{
-    title: string,
-    x:number,
-    width:number,
+interface HorizontalTimelineProps {
+    x: number;
+    width: number;
+    data?: bookingData;
 
-}> = ({title, x, width}) => {
+}
 
-
+export const HorizontalTimelineDataElement: React.FC<HorizontalTimelineProps> = ({x, width, data}) => {
+    console.log(data)
     return (
         <div className={style.timelineData}
-            style={{
-                left:x,
-                width:width
-            }}
+             style={{
+                 left: x,
+                 width: width,
+                 backgroundColor: data?.tags && data.tags[0].color + '55'
+             }}
         >
-            {title}
+            <div className={style.titleContainer}>
+                <div className={style.bookingTitle}>{data?.bookingTitle}</div>
+                <div className={style.bookingTag} style={{backgroundColor: data?.tags && data.tags[0].color}}>{data?.tags && data.tags[0].label}</div>
+            </div>
+            <div className={style.bookingOwner}>{data?.bookingOwner}</div>
         </div>
     );
 
