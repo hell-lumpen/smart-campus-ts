@@ -1,0 +1,78 @@
+.horTimelineMain{
+    background: #EFF2F1;
+    /*background: #262626;*/
+
+    width: 1000px;
+    height: 500px;
+    overflow: scroll;
+
+    border: 2px #767877 solid;
+}
+
+.horTimelineTimeContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left:  100px;
+    position:sticky;
+    top:0;
+    background: #EFF2F1;
+    height: 25px;
+    border-bottom: 1px #767877 solid;
+    z-index: 2;
+
+
+    width: 1000px;
+
+    /*position:sticky;*/
+    /*top:0;*/
+}
+
+
+.horTimelineTimeElement{
+    padding: 0 15px;
+    color:black;
+    font-weight: 600;
+    /*color:#A6A6A6;*/
+    width: 40px;
+
+    /*background: red;*/
+    /*!*height: inherit;*!*/
+    /*line-height: 100%*/
+
+}
+
+
+.horTimelineRoomRow{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #D2D4D4;
+    background: white;
+    /*background: #424242;*/
+}
+
+.horTimelineRoomData{
+    position:relative;
+    height: inherit;
+    display: flex;
+}
+
+
+.horTimelineRoomTitle{
+
+
+    width: 100px;
+    height: max-content;
+    padding: 15px 0;
+    text-align: center;
+    border-right: 1px solid #D2D4D4;
+
+    background: #EFF2F1;
+    /*background: #262626;*/
+    color:black;
+    /*color:#A6A6A6;*/
+
+    position:sticky;
+    left:0;
+    z-index: 1;
+}

@@ -1,5 +1,6 @@
-import {IconElement} from "./IconElement";
+import {IconElement} from "./IconElement/IconElement";
 import styled from "styled-components";
+import React from "react";
 
 
 const ProfileSpanText = styled.div`
@@ -7,7 +8,7 @@ const ProfileSpanText = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content:flex-start;
-  font-size : 12px;
+  font-size : 14px;
 `;
 
 export const ProfileSpan:React.FC<{fio:string}> = ({fio}) => {

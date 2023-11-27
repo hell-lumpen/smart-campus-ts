@@ -1,0 +1,11 @@
+
+.timelineData {
+    /*background: green;*/
+    height: 100%;
+    background: rgba(97, 255, 167, 70%);
+    border-left: 2px solid rgba(93, 245, 160, 70%);
+    border-right: 2px solid rgba(97, 255, 167, 70%);
+    display: inline;
+    position: absolute;
+
+}

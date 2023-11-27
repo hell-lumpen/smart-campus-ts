@@ -3,25 +3,33 @@ import styleTag from './TagElement.module.css'
 import styled from "styled-components";
 import {Simulate} from "react-dom/test-utils";
 import click = Simulate.click;
-import {IconElement} from "./IconElement";
+import {IconElement} from "../IconElement/IconElement";
 
 const TagSpan = styled.div<{isFull:boolean}>`
   font-weight: 400;
   background: #66ffff;
   //width: max-content;
-  width: ${({isFull}) => (isFull?'inherit':'max-content')};
-  padding: ${({isFull}) => (isFull?'0 10px':'0')};
-  margin-left: ${({isFull}) => (isFull?'-10px':'0')};
+  // width: ${({isFull}) => (isFull?'inherit':'max-content')};
+  //padding: ${({isFull}) => (isFull?'0 10px':'0')};
+  //margin-left: ${({isFull}) => (isFull?'-10px':'0')};
+  
   //text-align: left;
+  
+  width: max-content;
+  padding: 0 5px;
+  border-radius: 5px;
+  //border-radius: 2px;
+  margin-left: 1px;
   
   height: max-content;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 16px;
   
   //padding: 2px 8px;
   
   border:  ${({isFull}) => (isFull?'none':'1px solid #59DEDE')};
-  border-radius:  ${({isFull}) => (isFull?'none':'15px')};
+  
+    //border-radius:  ${({isFull}) => (isFull?'none':'15px')};
   
   
   display: flex;
