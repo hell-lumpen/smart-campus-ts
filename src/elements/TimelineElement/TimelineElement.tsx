@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import timeline_style from "./TimelineElement.module.css"
-import {useEffect, useState} from "react";
-import {log} from "util";
+import React, {useEffect, useState} from "react";
 
 
 const Timeline = styled.div<{ coordStart: number, coordEnd: number }>`
@@ -126,8 +125,8 @@ export const TimelineElement:React.FC<{dates:{ start_time: Date, end_time: Date 
                     height: '2px',
                     background: 'red',
                 }}/>
-                <b style={{
-                    lineHeight : '20px',
+                <b className={timeline_style.b} style={{
+                    lineHeight : '20px'
                 }}>{currentTime.getHours() + ':' + currentTime.getMinutes()}</b>
             </div>
 

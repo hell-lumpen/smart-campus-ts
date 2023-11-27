@@ -12,7 +12,7 @@ type iconType = 'BookingIcon' | 'CloseIcon' | 'PersonIcon' | 'NavigateBefore' | 
 
 interface IconElementData {
     type : iconType;
-};
+}
 
 export const IconElement: React.FC<IconElementData>  = ({type}) => {
     let resultIcon;

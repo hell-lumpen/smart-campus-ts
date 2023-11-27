@@ -12,6 +12,10 @@
     --pos_coor_y : 0px;
 }
 
+.b{
+    margin-top: -2px;
+}
+
 .currentTimeContainer{
     position: absolute;
     top: var(--pos_coor_y);
@@ -56,6 +60,7 @@
     /*background: green;*/
     transform: translate(0, -50%);
 }
+
 
 
 .timelineTimeZone{

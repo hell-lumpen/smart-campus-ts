@@ -7,6 +7,7 @@ import {NavigationPanel} from "../../blocks/NavigationPanel/NavigationPanel";
 import {NavigationDate} from "../../blocks/NavigationDate/NavigationDate";
 import {BookingAddButton} from "../../blocks/BookingAddButton/BookingAddButton";
 import {RoomWidget} from "../../widgets/RoomWidget/RoomWidget";
+import {HorizontalTimelineElement} from "../../elements/HorizontalTimelineElement/HorizontalTimelineElement";
 
 
 const BookingPage = () => {
@@ -27,7 +28,9 @@ const BookingPage = () => {
             <div className={booking_style.booking_card_container}>
                 <NavigationDate/>
                 <BookingAddButton/>
+                <HorizontalTimelineElement/>
                 <RoomWidget/>
+
 
                 {/*<BookingComponent {...data_booking}/>*/}
                 {/*<BookingComponent {...data_booking1}/>*/}

@@ -1,5 +1,6 @@
 import {IconElement} from "./IconElement/IconElement";
 import styled from "styled-components";
+import React from "react";
 
 
 const ProfileSpanText = styled.div`
