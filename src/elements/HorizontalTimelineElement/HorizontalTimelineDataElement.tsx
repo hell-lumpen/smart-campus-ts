@@ -11,7 +11,6 @@ interface HorizontalTimelineProps {
 }
 
 export const HorizontalTimelineDataElement: React.FC<HorizontalTimelineProps> = ({x, width, data}) => {
-    console.log(data)
     return (
         <div className={style.timelineData}
              style={{

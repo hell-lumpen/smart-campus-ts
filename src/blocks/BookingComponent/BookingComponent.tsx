@@ -18,7 +18,7 @@ export const BookingComponent: React.FC<BookingComponentData> = (
     data: BookingComponentData
 ) => {
 
-    const tagComponent = <TagElement title={data.tag} color={data.tagColor} isFullWidth={true}/>;
+    const tagComponent = <TagElement title={data.tag} color={data.tagColor}/>;
 
     return (
         <div className={style.bookingContainer}>

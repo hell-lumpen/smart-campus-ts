@@ -1,0 +1,62 @@
+.InfoCardBack{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    background: #00000099;
+
+    z-index: 5;
+}
+
+
+.InfoCard {
+    z-index: 6;
+
+    width: 30vw;
+    height: 30vh;
+    background: #ffffff;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 15px;
+    border: 1px solid #757575;
+
+    /*margin-bottom: 150px;*/
+}
+
+
+.InfoCardTitle{
+    /*background: red;*/
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5%;
+}
+
+
+.InfoCardAudience{
+    margin-left: 5%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 2%;
+
+}
+
+.InfoCardTags{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 2%;
+    margin-left: 8%;
+    width: 5000px;
+    /*height: 90px;*/
+
+    /*background: red;*/
+
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
+}
+
